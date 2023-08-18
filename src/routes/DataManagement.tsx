@@ -12,7 +12,7 @@ import {
 } from "antd";
 import React, { useRef, useState } from "react";
 
-const { Column, ColumnGroup } = Table;
+const { Column } = Table;
 const { Text } = Typography;
 
 import { SearchOutlined } from "@ant-design/icons";
@@ -47,120 +47,120 @@ interface DataType {
 
 type DataIndex = keyof DataType;
 
-const sample: DataType[] = [
-	{
-		key: "1",
-		account: "abc123",
-		password: "adsj134",
-		email: "sdhisdn@example.com",
-		emailPassword: "dsdsd",
-		status: 0,
-	},
-	{
-		key: "2",
-		account: "aenx",
-		password: "adsj134",
-		email: "s012isdn@example.com",
-		emailPassword: "dsdsd",
-		status: 2,
-	},
-	{
-		key: "3",
-		account: "abc123",
-		password: "adsj134",
-		email: "sdhsnsdn@example.com",
-		emailPassword: "dsdsd",
-		status: 1,
-	},
-	{
-		key: "4",
-		account: "aenx",
-		password: "adsj134",
-		email: "s012isdn@example.com",
-		emailPassword: "dsdsd",
-		status: 2,
-	},
-	{
-		key: "5",
-		account: "abc123",
-		password: "adsj134",
-		email: "sdhsnsdn@example.com",
-		emailPassword: "dsdsd",
-		status: 3,
-	},
-	{
-		key: "6",
-		account: "aenx",
-		password: "adsj134",
-		email: "s012isdn@example.com",
-		emailPassword: "dsdsd",
-		status: 0,
-	},
-	{
-		key: "7",
-		account: "abc123",
-		password: "adsj134",
-		email: "sdhsnsdn@example.com",
-		emailPassword: "dsdsd",
-		status: 1,
-	},
-	{
-		key: "8",
-		account: "abc123",
-		password: "adsj134",
-		email: "sdhisdn@example.com",
-		emailPassword: "dsdsd",
-		status: 2,
-	},
-	{
-		key: "9",
-		account: "aenx",
-		password: "adsj134",
-		email: "s012isdn@example.com",
-		emailPassword: "dsdsd",
-		status: 0,
-	},
-	{
-		key: "10",
-		account: "abc123",
-		password: "adsj134",
-		email: "sdhsnsdn@example.com",
-		emailPassword: "dsdsd",
-		status: 0,
-	},
-	{
-		key: "11",
-		account: "aenx",
-		password: "adsj134",
-		email: "s012isdn@example.com",
-		emailPassword: "dsdsd",
-		status: 0,
-	},
-	{
-		key: "12",
-		account: "abc123",
-		password: "adsj134",
-		email: "sdhsnsdn@example.com",
-		emailPassword: "dsdsd",
-		status: 2,
-	},
-	{
-		key: "13",
-		account: "aenx",
-		password: "adsj134",
-		email: "s012isdn@example.com",
-		emailPassword: "dsdsd",
-		status: 2,
-	},
-	{
-		key: "14",
-		account: "abc123",
-		password: "adsj134",
-		email: "sdhsnsdn@example.com",
-		emailPassword: "dsdsd",
-		status: 3,
-	},
-];
+// const sample: DataType[] = [
+// 	{
+// 		key: "1",
+// 		account: "abc123",
+// 		password: "adsj134",
+// 		email: "sdhisdn@example.com",
+// 		emailPassword: "dsdsd",
+// 		status: 0,
+// 	},
+// 	{
+// 		key: "2",
+// 		account: "aenx",
+// 		password: "adsj134",
+// 		email: "s012isdn@example.com",
+// 		emailPassword: "dsdsd",
+// 		status: 2,
+// 	},
+// 	{
+// 		key: "3",
+// 		account: "abc123",
+// 		password: "adsj134",
+// 		email: "sdhsnsdn@example.com",
+// 		emailPassword: "dsdsd",
+// 		status: 1,
+// 	},
+// 	{
+// 		key: "4",
+// 		account: "aenx",
+// 		password: "adsj134",
+// 		email: "s012isdn@example.com",
+// 		emailPassword: "dsdsd",
+// 		status: 2,
+// 	},
+// 	{
+// 		key: "5",
+// 		account: "abc123",
+// 		password: "adsj134",
+// 		email: "sdhsnsdn@example.com",
+// 		emailPassword: "dsdsd",
+// 		status: 3,
+// 	},
+// 	{
+// 		key: "6",
+// 		account: "aenx",
+// 		password: "adsj134",
+// 		email: "s012isdn@example.com",
+// 		emailPassword: "dsdsd",
+// 		status: 0,
+// 	},
+// 	{
+// 		key: "7",
+// 		account: "abc123",
+// 		password: "adsj134",
+// 		email: "sdhsnsdn@example.com",
+// 		emailPassword: "dsdsd",
+// 		status: 1,
+// 	},
+// 	{
+// 		key: "8",
+// 		account: "abc123",
+// 		password: "adsj134",
+// 		email: "sdhisdn@example.com",
+// 		emailPassword: "dsdsd",
+// 		status: 2,
+// 	},
+// 	{
+// 		key: "9",
+// 		account: "aenx",
+// 		password: "adsj134",
+// 		email: "s012isdn@example.com",
+// 		emailPassword: "dsdsd",
+// 		status: 0,
+// 	},
+// 	{
+// 		key: "10",
+// 		account: "abc123",
+// 		password: "adsj134",
+// 		email: "sdhsnsdn@example.com",
+// 		emailPassword: "dsdsd",
+// 		status: 0,
+// 	},
+// 	{
+// 		key: "11",
+// 		account: "aenx",
+// 		password: "adsj134",
+// 		email: "s012isdn@example.com",
+// 		emailPassword: "dsdsd",
+// 		status: 0,
+// 	},
+// 	{
+// 		key: "12",
+// 		account: "abc123",
+// 		password: "adsj134",
+// 		email: "sdhsnsdn@example.com",
+// 		emailPassword: "dsdsd",
+// 		status: 2,
+// 	},
+// 	{
+// 		key: "13",
+// 		account: "aenx",
+// 		password: "adsj134",
+// 		email: "s012isdn@example.com",
+// 		emailPassword: "dsdsd",
+// 		status: 2,
+// 	},
+// 	{
+// 		key: "14",
+// 		account: "abc123",
+// 		password: "adsj134",
+// 		email: "sdhsnsdn@example.com",
+// 		emailPassword: "dsdsd",
+// 		status: 3,
+// 	},
+// ];
 
 const initResponse = await fetch("https://mg.0x0501.repl.co/private/all", {
 	method: "GET",
@@ -184,8 +184,8 @@ initResponse.data.map(record => {
 
 function DataManagement() {
 	const [data, setData] = useState(initData);
-	const [searchText, setSearchText] = useState("");
-	const [searchedColumn, setSearchedColumn] = useState("");
+	const [_searchText, setSearchText] = useState("");
+	const [_searchedColumn, setSearchedColumn] = useState("");
 	const searchInput = useRef<InputRef>(null);
 
 

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { invoke } from "@tauri-apps/api/tauri";
 import "../App.css";
 import { Button, Layout, Menu, theme } from "antd";
 import {
@@ -15,8 +14,6 @@ import { Outlet, useLocation, useNavigate } from "react-router-dom";
 const { Header, Sider, Content } = Layout;
 
 function Root() {
-	const [greetMsg, setGreetMsg] = useState("");
-	const [name, setName] = useState("");
 
 	const [collapsed, setCollapsed] = useState(false);
 	const {
@@ -27,10 +24,6 @@ function Root() {
 
 	const location = useLocation();
 
-	async function greet() {
-		// Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
-		setGreetMsg(await invoke("greet", { name }));
-	}
 
 	return (
 		<Layout style={{ height: "100%" }}>

@@ -1,10 +1,10 @@
-import { Badge, Col, Space, Table, Tag, Tree, Typography } from "antd";
+import type { TableColumnsType } from "antd";
+import { Badge, Table, Typography } from "antd";
 import React, { useState } from "react";
 
 const { Title, Text, Paragraph } = Typography;
-import type { TableColumnsType } from "antd";
 
-const { Column, ColumnGroup } = Table;
+const { Column } = Table;
 
 interface ParamNode {
 	key: React.Key;
@@ -161,7 +161,7 @@ const APIDOC: ApiDocStructure[] = [
 ];
 
 function APISettings() {
-	const [apiHost, setApiHost] = useState("https://mg.0x0501.repl.co/api");
+	const [apiHost, _setApiHost] = useState("https://mg.0x0501.repl.co/api");
 
 	const expandedRowRender = (
 		_record: ApiDocStructure,

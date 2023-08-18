@@ -43,7 +43,7 @@ const TokenData = await decryptedToken(tokenResponse.data.msg.token);
 
 function TokenManagement() {
 	const [token, setToken] = useState(TokenData);
-	const [tokenStatus, setTokenStatus] = useState(
+	const [tokenStatus, _setTokenStatus] = useState(
 		tokenResponse.data.msg.tokenStatus
 	);
 
